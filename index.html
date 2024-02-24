@@ -3,192 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fall ball</title>
+    <title>BrickOut 2</title>
     <script src="//aframe.io/releases/1.1.0/aframe.min.js"></script>
     <script src="//unpkg.com/aframe-extras@3.13.1/dist/aframe-extras.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
-    <div class="izquierda">
-        <a-scene  physics="gravity:-9.8">
-            <a-box 
-                id="spawner"
-                position="-8 13 1"
-                scale="1 .2 .2"
-                animation="
-                    property:position;
-                    from:-8 13 1;
-                    to:8 13 1;
-                    loop: true;
-                    dir: alternate;
-                    dur:3000;
-                "
-            ></a-box>
+    <a-scene id="scene" physics="gravity:-9.8 debug: true">
+        <a-box  position="0 8 0" scale="25 15 0.1" color="black" ></a-box>
+        <a-box static-body position="-12.35 8 0.3" scale="0.3 15 1" color="blue" ></a-box>
+        <a-box static-body position="12.35 8 0.3" scale="0.3 15 1" color="blue" ></a-box>
+        <a-box static-body position="0 15.5 0.3" scale="25 0.3 1" color="blue"></a-box>
+        <a-box static-body position="0 0.67 0.3" scale="25 0.3 1" color="red"></a-box>
 
-            <a-entity id="ball-spawner" ball></a-entity>
+        <a-box static-body id="barra" position="0 1.8 .5" scale="2 .2 .9" ></a-box>
 
-            <a-cylinder static-body position="-8 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="-7 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="-6 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="-5 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="-4 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="-3 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="-2 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="-1 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="0 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="1 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="2 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="3 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="4 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="5 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="6 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="7 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-            <a-cylinder static-body position="8 10 1" radius="0.2" rotation="90 0 0" height="3" color="red"></a-cylinder>
-
-            <a-cylinder static-body position="-7.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="-6.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="-5.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="-4.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="-3.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="-2.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="-1.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="-0.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="0.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="1.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="2.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="3.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="4.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="5.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="6.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-            <a-cylinder static-body position="7.5 9 1" radius="0.2" rotation="90 0 0" height="3" color="green"></a-cylinder>
-
-            <a-cylinder static-body position="-8 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="-7 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="-6 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="-5 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="-4 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="-3 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="-2 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="-1 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="0 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="1 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="2 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="3 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="4 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="5 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="6 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="7 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-            <a-cylinder static-body position="8 8 1" radius="0.2" rotation="90 0 0" height="3" color="yellow"></a-cylinder>
-
-            <a-cylinder static-body position="-7.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="-6.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="-5.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="-4.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="-3.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="-2.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="-1.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="-0.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="0.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="1.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="2.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="3.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="4.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="5.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="6.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-            <a-cylinder static-body position="7.5 7 1" radius="0.2" rotation="90 0 0" height="3" color="purple"></a-cylinder>
-
-            <a-cylinder static-body position="-8 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="-7 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="-6 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="-5 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="-4 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="-3 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="-2 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="-1 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="0 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="1 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="2 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="3 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="4 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="5 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="6 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="7 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-            <a-cylinder static-body position="8 6 1" radius="0.2" rotation="90 0 0" height="3" color="blue"></a-cylinder>
-
-            <a-cylinder static-body position="-7.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="-6.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="-5.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="-4.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="-3.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="-2.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="-1.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="-0.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="0.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="1.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="2.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="3.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="4.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="5.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="6.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-            <a-cylinder static-body position="7.5 5 1" radius="0.2" rotation="90 0 0" height="3" color="cyan"></a-cylinder>
-
-            <a-plane
-            width="20"
-            height="20"
-            position="0 0 1"
-            rotation="-90 0 0"
-            color="grey"
-            static-body
-            ></a-plane>
-
-            <a-box 
-            static-body
-            position="-8.3 8 1"
-            scale=".5 14 3"
-            color="black"
-            ></a-box>
-
-            <a-box 
-            static-body
-            position="8.3 8 1"
-            scale=".5 14 3"
-            color="black"
-            ></a-box>
-
-            <a-box 
-            static-body
-            position="0 15 1"
-            scale="17 .5 3"
-            color="black"
-            ></a-box>
-
-            <a-box 
-            static-body
-            position="0 8 -0.5"
-            scale="17 14 .3"
-            color="#1f1663"
-            ></a-box>
-
-
-
-            <!-- <a-sphere 
-                position="0 14 1"
-                radius=".1"
-                color="blue"
-                dynamic-body
-            ></a-sphere> -->
-            <a-camera position="2 8 11"></a-camera>
-        </a-scene> 
-    </div>
-    <div class="derecha">
-        <h1>Fallballs</h1>
-        <h2>SCORE</h2>
-        <input id="score" type="button" value="-----" class="buttontxt">
-        <h2>TIROS</h2>
-        <input id="tiros" type="button" value="-----" class="buttontxt">
-        <input id="tiro" type="button" value="Tirar" class="buttonTiro"> 
-        <h6> Desarrollado por FABA</h6>
-    </div>
-    <script src="./index.js"></script>
+        <!-- Cambiado a static-body ya que no se mueve -->
+        <!-- <a-sphere dynamic-body position="0 4 .5" radius=".3" color="yellow" elasticity="1"></a-sphere> -->
+        <a-camera position="0 8 10"></a-camera>
+    </a-scene>
+    <input id="tiro" class="buttonTiro" value="INICIO" type="button">
+    <script src="./collision.js"></script>
+    <script src="./pelota.js"></script>
+    <script src="./blocks.js"></script>
+    <script src="./barra.js"></script>
 </body>
 </html>
